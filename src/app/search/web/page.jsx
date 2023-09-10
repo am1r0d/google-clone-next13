@@ -1,7 +1,7 @@
 import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 
-const page = async ({ searchParams }) => {
+const WebSearchPage = async ({ searchParams }) => {
     const startIndex = searchParams.start || "1";
     await new Promise((resolve) => setTimeout(resolve, 5000));
     const response = await fetch(
@@ -22,7 +22,7 @@ const page = async ({ searchParams }) => {
             <div className="flex flex-col justify-center items-center pt-10">
                 <h1 className="text-3xl mb-4">No results found</h1>
                 <p className="text-lg">
-                    Try searching for something else or go back to the homepage{" "}
+                    Try searching for something else or go back to the homepage
                     <Link href="/" className="text-blue-500">
                         Home
                     </Link>
@@ -33,4 +33,4 @@ const page = async ({ searchParams }) => {
     return <>{results && <WebSearchResults results={data} />}</>;
 };
 
-export default page;
+export default WebSearchPage;

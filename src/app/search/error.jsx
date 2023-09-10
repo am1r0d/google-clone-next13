@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
 
-const error = ({ error, reset }) => {
+import { useEffect } from "react";
+
+export default function Error({ error, reset }) {
     useEffect(() => {
-        console.log("Error: " + error);
+        console.log("Error: ", error);
     }, [error]);
     return (
         <div className="flex flex-col justify-center items-center pt-10">
@@ -13,6 +14,4 @@ const error = ({ error, reset }) => {
             </button>
         </div>
     );
-};
-
-export default error;
+}

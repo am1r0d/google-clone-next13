@@ -10,7 +10,6 @@ const page = async ({ searchParams }) => {
     }
 
     const data = await response.json();
-
     console.log(data);
 
     const results = data.items;
@@ -19,8 +18,8 @@ const page = async ({ searchParams }) => {
             <div className="flex flex-col justify-center items-center pt-10">
                 <h1 className="text-3xl mb-4">No results found</h1>
                 <p className="text-lg">
-                    Try searching for Something else or go back to the homepage{" "}
-                    <Link className="text-blue-500" href="/">
+                    Try searching for something else or go back to the homepage{" "}
+                    <Link href="/" className="text-blue-500">
                         Home
                     </Link>
                 </p>
